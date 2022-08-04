@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Input value:");
+        int value = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(value*value);
+
+
+    }
+}

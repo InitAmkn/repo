@@ -2,14 +2,30 @@
 {
     private static void Main(string[] args)
     {
-        //task0();
-        //task1();
-        //task2();
-        //task3();
+       Console.WriteLine("start task0:");
+        task0();
+        Console.WriteLine("end task0");
+
+        Console.WriteLine("start task1:");
+        task1();
+        Console.WriteLine("end task1");
+
+        Console.WriteLine("start task2:");
+        task2();
+        Console.WriteLine("end task2");
+
+        Console.WriteLine("start task3:");
+        task3();
+        Console.WriteLine("end task3");
+
+        Console.WriteLine("start task4:");
         task4();
-    
+        Console.WriteLine("end task4");
+
+
         void task0()
-        {
+        {       
+                
                 Console.WriteLine("Input value:");
                 int value = Convert.ToInt32(Console.ReadLine());
 
@@ -70,7 +86,10 @@
             }
         void task4()//Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает последнюю цифру этого числа.
         {
-            
+            Console.WriteLine("Input first value:");
+                int value1 = Convert.ToInt32(Console.ReadLine());
+                int outputValue = value1 % 10;
+                Console.Write(outputValue);
         }
         
 

@@ -1,25 +1,37 @@
-﻿//Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+﻿
+        //Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+        //Усложнил задачу, добавил возможность добавлять любое кол-во чисел.
 
- Console.WriteLine("Введите число:"); //Не допускается ввод других символов кроме цифр
-    double value1 = Convert.ToDouble(Console.ReadLine());
+         double maxvalue1;
+         string? checkAnswer;
+         //нашел ответ как решить проблему с ошибкой в интернете 
+         //Ошибка (23 строка) - Преобразование литерала, допускающего значение NULL или возможного значения NULL в тип, не допускающий значение NULL.
+         //https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/nullable-value-types
 
-    if(value1>0)
-        { 
-            Console.WriteLine("Четные числа:"); 
-            for(int i = 2;i<=value1;i=i+2)
-                {
-                    Console.Write($"{i} ");
-                }
-        }
-    if(value1<0)
+         Console.WriteLine("Введите первое число:"); //Не допускается ввод других символов кроме цифр
+         double value1 = Convert.ToDouble(Console.ReadLine());
+         maxvalue1 = value1;
+        
+        do{
+        Console.WriteLine("################################################");
+        Console.WriteLine("Хотите продолжить ввод чисел? Введите да / нет:");
+        Console.WriteLine("нет - Вывести максимальное число из введеных ранее;");
+        Console.WriteLine("да - Ввод нового числа."); 
+        Console.WriteLine("################################################");
+        checkAnswer =  Console.ReadLine(); //Не допускается ввод других значений кроме да/нет
+        
+        if(checkAnswer == "да")
         {
-             Console.WriteLine("Четные числа:"); 
-            for(int i = -2;i>=value1;i=i-2)
-                {
-                     Console.Write($"{i} ");
-                }
+            Console.WriteLine("Введите число:");
+            value1 = Convert.ToDouble(Console.ReadLine());
+            if(value1>maxvalue1) maxvalue1 = value1;
         }
-    if(value1==0)
+       
+        }
+       while(checkAnswer == "да");
+   
+        if(checkAnswer == "нет")
         {
-            Console.WriteLine("Вы ввели 0");
+            Console.WriteLine($"Максимальное число: {maxvalue1}"); 
         }
+

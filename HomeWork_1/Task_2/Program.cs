@@ -3,8 +3,12 @@
     private static void Main(string[] args)
     {
         //Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+        //Усложнил задачу, добавил возможность добавлять любое кол-во чисел.
          double maxvalue1;
-         string checkAnswer;
+         string? checkAnswer;
+         //нашел ответ как решить проблему с ошибкой в интернете 
+         //Ошибка (23 строка) - Преобразование литерала, допускающего значение NULL или возможного значения NULL в тип, не допускающий значение NULL.
+         //https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/builtin-types/nullable-value-types
 
          Console.WriteLine("Введите первое число:"); //Не допускается ввод других символов кроме цифр
          double value1 = Convert.ToDouble(Console.ReadLine());
@@ -16,7 +20,7 @@
         Console.WriteLine("нет - Вывести максимальное число из введеных ранее;");
         Console.WriteLine("да - Ввод нового числа."); 
         Console.WriteLine("################################################");
-        checkAnswer =  Console.ReadLine();
+        checkAnswer =  Console.ReadLine(); //Не допускается ввод других значений кроме да/нет
         
         if(checkAnswer == "да")
         {

@@ -1,0 +1,63 @@
+<mxfile host="65bd71144e">
+    <diagram id="CfLts7JXnZs10Yi-ryZP" name="Страница 1">
+        <mxGraphModel dx="809" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="45" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Start" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="273.75" y="50" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="44" target="46">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="double&amp;nbsp;value1&amp;nbsp;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="253.76" y="110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="yes" style="edgeStyle=none;html=1;" edge="1" parent="1" source="46" target="48">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="no" style="edgeStyle=none;html=1;" edge="1" parent="1" source="46" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;span&gt;value1 = 0&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230.62" y="200" width="166.25" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="WriteLine(&quot;Вы ввели 0&quot;)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+                    <mxGeometry x="450.01" y="200" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="&lt;span&gt;value1 % 2 = 0&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230.64000000000001" y="310" width="166.25" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="yes" style="edgeStyle=none;html=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="396.8899999999999" y="349.9999999999999" as="sourcePoint"/>
+                        <mxPoint x="450.0250000000001" y="349.9999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="no" style="edgeStyle=none;html=1;" edge="1" parent="1" source="54" target="56">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;span&gt;value1 % 2 = 0&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230.64000000000001" y="310" width="166.25" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="WriteLine(&quot;Число четное&quot;)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+                    <mxGeometry x="450.03" y="310" width="169.98" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="yes" style="edgeStyle=none;html=1;" edge="1" parent="1" source="56">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="450" y="470.0000000000001" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="&lt;span&gt;value1 % 2 != 0&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230.64000000000001" y="430" width="166.25" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="WriteLine(&quot;Число нечетное&quot;)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+                    <mxGeometry x="450.03" y="430" width="169.98" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

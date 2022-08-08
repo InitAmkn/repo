@@ -5,13 +5,25 @@
 //16, 4 -> кратно
 
 
-int value1 = Convert.ToInt32(Console.ReadLine());
-int value2 = Convert.ToInt32(Console.ReadLine());
+internal partial class Program
+{
+    private static void Main(string[] args)
+    {
+        int value1 = Convert.ToInt32(Console.ReadLine());
+        int value2 = Convert.ToInt32(Console.ReadLine());
 
-if (value1 % value2 == 0)
-{
-    Console.WriteLine("Кратно");
-}else 
-{
-        Console.WriteLine($"не кратно, остаток {value1 % value2}");
+        remainderDivision(value1, value2);
+
+        void remainderDivision(int v1, int v2)
+        {
+            if (v1 % v2 == 0)
+            {
+                Console.WriteLine("Кратно");
+            }
+            else
+            {
+                Console.WriteLine($"не кратно, остаток {v1 % v2}");
+            }
+             }
+         }
 }

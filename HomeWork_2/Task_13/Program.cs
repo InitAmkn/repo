@@ -4,11 +4,11 @@
 //32679 -> 6
 
 
-int randomThreeDigitNumber = new Random().Next(0,10);
+int randomNumber = new Random().Next(0,10000);
 
- Console.WriteLine(randomThreeDigitNumber);
- Console.WriteLine($"Ver1: {threeCharNumberVer1(randomThreeDigitNumber)}");
- Console.WriteLine($"Ver2: {threeCharNumberVer2(randomThreeDigitNumber)}");
+ Console.WriteLine($"Random Number: {randomNumber}");
+ Console.WriteLine($"Ver1: {threeCharNumberVer1(randomNumber)}");
+ Console.WriteLine($"Ver2: {threeCharNumberVer2(randomNumber)}");
 
 int threeCharNumberVer2 (int number)
 {

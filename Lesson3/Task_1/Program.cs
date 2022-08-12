@@ -5,20 +5,14 @@ int[]masMatrix2 = {0};
 Console.WriteLine("Введите матрицу 1 :");
 Console.WriteLine("Пример ввода: a1,b1,c1");
 string? matrix1 = Console.ReadLine();
-
-if(matrix1!=null) masMatrix1 = InputMas(matrix1);
-
 Console.WriteLine("Введите матрицу 2 :");
 Console.WriteLine("Пример ввода: a2,b2,c2");
 string? matrix2 = Console.ReadLine();
 
-if(matrix2!=null) masMatrix2 = InputMas(matrix2);
-
-
 if(matrix1!=null && matrix2!=null) 
     {
-        masMatrix1 = InputMas(matrix1);
-        masMatrix2 = InputMas(matrix2);
+        masMatrix1 = InputMas(matrix1, ',');
+        masMatrix2 = InputMas(matrix2, ',');
  
     }       
         printMas(masMatrix1);
@@ -42,19 +36,18 @@ int [] sumMas(int[]mas1,int[]mas2)
 }
 
 
-int [] InputMas(string matrix)   {
-
-    int[]mas = new int [matrix.Length];
+int [] InputMas(string matrix, char separator)   {
     string value = "";
+    int[]mas = new int [matrix.Length];
     int j = 0;
     for(int i = 0; i < matrix.Length; i++)
         {
 
-            if(matrix[i]!= ',')
+            if(matrix[i]!= separator)
             {
                 value = value + matrix[i];
             }
-            if(matrix[i] == ',' || i == matrix.Length-1)
+            if(matrix[i] == separator || i == matrix.Length-1)
             {
                 mas[j] = Convert.ToInt32(value);
                 j++;

@@ -1,0 +1,15 @@
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\bin\Debug\net6.0\Code_Wars.exe
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\bin\Debug\net6.0\Code_Wars.deps.json
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\bin\Debug\net6.0\Code_Wars.runtimeconfig.json
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\bin\Debug\net6.0\Code_Wars.dll
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\bin\Debug\net6.0\Code_Wars.pdb
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.csproj.AssemblyReference.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.AssemblyInfoInputs.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.AssemblyInfo.cs
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.csproj.CoreCompileInputs.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.dll
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\refint\Code_Wars.dll
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.pdb
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\Code_Wars.genruntimeconfig.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\Code_Wars\obj\Debug\net6.0\ref\Code_Wars.dll

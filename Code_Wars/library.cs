@@ -93,19 +93,19 @@ class library
         return masOutput;
     }
  
-    public static bool Narcissistic(int value)
+    public static bool Narcissistic(int value) //Проверка на нарциссическое число
         {
             bool isNarcissistic = false;
             int intChar=0;
             int sumDegree = 0;
             int valueTemp = value;
             int powChar;
-            for (int i = 0; i < charCounter(value)-1; i++)
+            for (int i = 0; i < charCounter(value); i++)
             {
                 if (valueTemp > 9) intChar = valueTemp % (valueTemp / 10 * 10);
                 else intChar = valueTemp; 
                 powChar = intChar;
-                for (int j = 1; j <  charCounter(value) - 1; j++)
+                for (int j = 1; j <  charCounter(value); j++)
                 {
                     powChar = powChar * intChar;
                 }

@@ -92,5 +92,45 @@ class library
         }
         return masOutput;
     }
+ 
+    public static bool Narcissistic(int value)
+        {
+            bool isNarcissistic = false;
+            int intChar=0;
+            int sumDegree = 0;
+            int valueTemp = value;
+            int powChar;
+            for (int i = 0; i < charCounter(value)-1; i++)
+            {
+                if (valueTemp > 9) intChar = valueTemp % (valueTemp / 10 * 10);
+                else intChar = valueTemp; 
+                powChar = intChar;
+                for (int j = 1; j <  charCounter(value) - 1; j++)
+                {
+                    powChar = powChar * intChar;
+                }
+                sumDegree = sumDegree + powChar;
+                valueTemp = valueTemp / 10; 
+            }
+
+            
+            if (value == sumDegree) isNarcissistic = true;
+
+            return isNarcissistic;
+        }
+     public static int charCounter(int value) //метод подсчета кол-ва цифр в числе
+    {
+        int countDecimal = 1;
+        int countChar = 0;
+        int divisionResult = 0;
+       do
+        {
+            divisionResult = value/countDecimal;
+            countDecimal = countDecimal * 10;
+            countChar++;
+        } while(divisionResult!=0);
+
+        return countChar-1;
+    }
  }
        

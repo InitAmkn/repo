@@ -113,7 +113,7 @@ class library
 
             return isNarcissistic;
         }
-     public static int charCounter(int value) //метод подсчета кол-ва цифр в числе
+    public static int charCounter(int value) //метод подсчета кол-ва цифр в числе
     {
         int countDecimal = 1;
         int countChar = 0;
@@ -128,7 +128,7 @@ class library
         return countChar-1;
     }
  
-   public static string[] Solution(string str) 
+    public static string[] Solution(string str) 
         {
             /*
              * Complete the solution so that it splits the string into pairs of two characters. 
@@ -155,6 +155,33 @@ class library
             return outPut;
         }
  
- 
+    public static string GetReadableTime(int seconds) //пересчет секунд в часы
+        {
+            /*Write a function, which takes a non-negative integer(seconds) as input and returns the time in a human-readable format(HH: MM:SS)
+                HH = hours, padded to 2 digits, range: 00 - 99
+                MM = minutes, padded to 2 digits, range: 00 - 59
+                SS = seconds, padded to 2 digits, range: 00 - 59
+                The maximum time never exceeds 359999(99:59:59)
+             You can find some examples in the test fixtures.*/
+
+            int HH = 0;
+            int MM = 0;
+            int SS = 0;
+
+            SS = seconds % 60;
+            MM = seconds / 60 % 60;
+            HH = seconds / 60 / 60 ;
+
+            string sHH = "" + HH;
+            string sMM = "" + MM;
+            string sSS = "" + SS;
+
+            if (HH < 10) sHH = "0" + HH;
+            if (MM < 10) sMM = "0" + MM;
+            if (SS < 10) sSS = "0" + SS;
+
+            string outPut = "" + sHH + ":" + sMM + ":" + sSS;
+            return outPut;            
+        }
  }
        

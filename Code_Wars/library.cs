@@ -1,11 +1,7 @@
 ﻿using System;
 
-
-  
-
 class library
 {
-  
     public static int[] MoveZeroes(int[] arr) // перемещение нулей в конец массива
         {
             int[] arr1 = new int[arr.Length];
@@ -92,7 +88,6 @@ class library
         }
         return masOutput;
     }
- 
     public static bool Narcissistic(int value) //Проверка на нарциссическое число
         {
             bool isNarcissistic = false;
@@ -132,5 +127,34 @@ class library
 
         return countChar-1;
     }
+ 
+   public static string[] Solution(string str) 
+        {
+            /*
+             * Complete the solution so that it splits the string into pairs of two characters. 
+            If the string contains an odd number of characters then it should replace the 
+           missing second character of the final pair with an underscore('_').
+            Examples:
+             *'abc' =>  ['ab', 'c_']
+             *'abcdef' => ['ab', 'cd', 'ef']*
+             */
+            if (str.Length % 2 != 0) 
+            {
+                str = str + "_";
+            }
+            string[] outPut = new string[str.Length/2];
+            int count = 0;
+            for (int i = 0; i < str.Length-1; i=i+2)
+            {  
+               string word = "";
+               word = word + str[i];
+               word = word + str[i+1];
+               outPut[count] = word;
+               count++;
+            }
+            return outPut;
+        }
+ 
+ 
  }
        

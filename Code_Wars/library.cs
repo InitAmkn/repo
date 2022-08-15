@@ -127,8 +127,7 @@ class library
 
         return countChar-1;
     }
- 
-    public static string[] Solution(string str) 
+    public static string[] Solution(string str) //разбиение строки на массив 
         {
             /*
              * Complete the solution so that it splits the string into pairs of two characters. 
@@ -154,7 +153,6 @@ class library
             }
             return outPut;
         }
- 
     public static string GetReadableTime(int seconds) //пересчет секунд в часы
         {
             /*Write a function, which takes a non-negative integer(seconds) as input and returns the time in a human-readable format(HH: MM:SS)

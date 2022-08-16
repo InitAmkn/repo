@@ -1,0 +1,15 @@
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\bin\Debug\net6.0\Task_25.exe
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\bin\Debug\net6.0\Task_25.deps.json
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\bin\Debug\net6.0\Task_25.runtimeconfig.json
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\bin\Debug\net6.0\Task_25.dll
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\bin\Debug\net6.0\Task_25.pdb
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.csproj.AssemblyReference.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.AssemblyInfoInputs.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.AssemblyInfo.cs
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.csproj.CoreCompileInputs.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.dll
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\refint\Task_25.dll
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.pdb
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\Task_25.genruntimeconfig.cache
+C:\Users\mkn\Desktop\Курс разработчик\C#\repo\HomeWork_4\Task_25\obj\Debug\net6.0\ref\Task_25.dll

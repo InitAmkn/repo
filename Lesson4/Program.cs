@@ -11,7 +11,7 @@ internal class Program
             1 0 0
             0 0 1
         */
-        int[] GenMas(int N)
+        int[] generatingAnArray(int N)
         {
 
             int[] masRand = new int[N];
@@ -21,9 +21,7 @@ internal class Program
                 masRand[i] = new Random().Next(0, 2);
             }
             return masRand;
-
         }
-
         /*
         2.Написать метод, принимающий бинарное представление числа
            и возвращающее десятиченое представление числа
@@ -31,8 +29,6 @@ internal class Program
         1 1 0 0 -> 12
         1 1 0 1 -> 13
         */
-
-
         int conversionToDecimal(int[] mas)
         {
             int outNumber = 0;
@@ -53,8 +49,6 @@ internal class Program
         10,8 -> 12
         7,6 ->  10
         */
-
-
         int[] numberConvert(int numInput, int Base)
         {
 
@@ -77,11 +71,10 @@ internal class Program
         }
 
 
-        //Console.WriteLine("Введите число N");
-        //int N = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите число N");
+        int N = Convert.ToInt32(Console.ReadLine());
 
-        //int[] arr = GenMas(N);
-
+        int[] arr = generatingAnArray(N);
 
 
         for (int i = 0; i < numberConvert(123, 8).Length; i++)
@@ -89,16 +82,8 @@ internal class Program
             Console.Write(numberConvert(123, 8)[i] + " ");
         }
 
-        //Console.WriteLine();
-        // Console.WriteLine(conversionToDecimal(arr));
-
-
-
-
-
-
-
-
+        Console.WriteLine();
+        Console.WriteLine(conversionToDecimal(arr));
 
     }
 

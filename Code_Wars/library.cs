@@ -71,14 +71,7 @@ class library
 
         return ResizeArray(mas, j);
     }
-    public static void printMas(int[] masX)// Вывод массива в консоль
-    {
-        for (int i = 0; i < masX.Length; i++)
-        {
-            Console.Write($"{masX[i]} ");
-        }
 
-    }
     public static int[] ResizeArray(int[] masInput, int count)//изменение размера массива
     {
         int[] masOutput = new int[count];
@@ -87,6 +80,14 @@ class library
             masOutput[i] = masInput[i];
         }
         return masOutput;
+    }
+    public static void printMas(int[] masX)// Вывод массива в консоль
+    {
+        for (int i = 0; i < masX.Length; i++)
+        {
+            Console.Write($"{masX[i]} ");
+        }
+
     }
     public static bool Narcissistic(int value) //Проверка на нарциссическое число
     {

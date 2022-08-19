@@ -10,7 +10,7 @@ class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(sumDigits(2525424));
+        Console.WriteLine(sumDigits(9012));
 
         int sumDigits(int number)
         {

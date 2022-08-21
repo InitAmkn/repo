@@ -9,7 +9,7 @@ int[] randMas(int quantity, int minValueRand, int maxValueRand)
     int[] mas = new int[quantity];
     for (int i = 0; i < mas.Length; i++)
     {
-        mas[i] = new Random().Next(minValueRand, maxValueRand);
+        mas[i] = new Random().Next(minValueRand, maxValueRand + 1);
     }
     return mas;
 }

@@ -34,4 +34,4 @@ int evenIndexNumbersAdder(int[] inputMas)
 
 int[] arr = randMas(10, 100, 1000);
 Console.WriteLine($"Рандомный массив: {ArrayToString(arr)}");
-Console.WriteLine($"Кол-во четных чисел: {evenIndexNumbersAdder(arr)}");
+Console.WriteLine($"Сумма чисел с нечетными индексами: {evenIndexNumbersAdder(arr)}");

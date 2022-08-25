@@ -275,7 +275,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
-
+                //допишу как-нибудь
             }
         }
 
@@ -314,7 +314,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
         }
         return matrix1;
     }
-    void PrintMatrix<T>(T[,] matrix)
+    public void PrintMatrix<T>(T[,] matrix)
     {
 
         for (int i = 0; i < matrix.GetLength(0); i++)
@@ -326,6 +326,33 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
             Console.WriteLine();
         }
 
+    }
+    public int[,] TurnMatrixClockwise(int[,] matrix)
+    {
+        int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
+
+        for (int i = 0; i < outMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < outMatrix.GetLength(1); j++)
+            {
+                outMatrix[i, j] = matrix[outMatrix.GetLength(1) - j - 1, i];
+            }
+        }
+        return outMatrix;
+    }
+
+    public int[,] TurnMatrixAnticlockwise(int[,] matrix)
+    {
+        int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
+
+        for (int i = 0; i < outMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < outMatrix.GetLength(1); j++)
+            {
+                outMatrix[i, j] = matrix[j, outMatrix.GetLength(0) - i - 1];
+            }
+        }
+        return outMatrix;
     }
 
 }

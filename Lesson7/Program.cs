@@ -25,7 +25,7 @@ void PrintMatrix<T>(T[,] matrix)
     }
 
 }
-int[,] ClockwiseTurnMatrix(int[,] matrix)
+int[,] TurnMatrixClockwise(int[,] matrix)
 {
     int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
 
@@ -39,7 +39,7 @@ int[,] ClockwiseTurnMatrix(int[,] matrix)
     return outMatrix;
 }
 
-int[,] AnticlockwiseTurnMatrix(int[,] matrix)
+int[,] TurnMatrixAnticlockwise(int[,] matrix)
 {
     int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
 
@@ -53,10 +53,10 @@ int[,] AnticlockwiseTurnMatrix(int[,] matrix)
     return outMatrix;
 }
 
-int[,] matrix = GenerationRandomMatrix(6, 3);
+int[,] matrix = GenerationRandomMatrix(4, 3);
 
 PrintMatrix(matrix);
 Console.WriteLine("перевернутая матрица по часовой:");
-PrintMatrix(ClockwiseTurnMatrix(matrix));
+PrintMatrix(TurnMatrixClockwise(matrix));
 Console.WriteLine("перевернутая матрица против часовой:");
-PrintMatrix(AnticlockwiseTurnMatrix(ClockwiseTurnMatrix(matrix)));
+PrintMatrix(TurnMatrixAnticlockwise(TurnMatrixClockwise(matrix)));

@@ -236,9 +236,8 @@ class library
 
     }
 
-    public static int Determinant(int[][] matrix)
-    {
-        /*
+
+    /*
 Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
 How to take the determinant of a matrix -- it is simplest to start with the smallest cases:
 A 1x1 matrix |a| has determinant a.
@@ -254,8 +253,8 @@ For the 3x3 case, [ [a, b, c], [d, e, f], [g, h, i] ] or
 |d e f|  
 |g h i|  
 the determinant is: a * det(a_minor) - b * det(b_minor) + c * det(c_minor) where det(a_minor)
- refers to taking the determinant of the 2x2 matrix created by crossing out the row and column 
- in which the element a occurs:
+refers to taking the determinant of the 2x2 matrix created by crossing out the row and column 
+in which the element a occurs:
 |- - -|
 |- e f|
 |- h i|  
@@ -264,6 +263,8 @@ The determinant of larger matrices are calculated analogously, e.g.
 if M is a 4x4 matrix with first row [a, b, c, d], then:
 det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_minor)
 */
+    public static int Determinant(int[][] matrix)
+    {
         int det = 0;
         if (matrix.GetLength(0) == 1 && matrix.GetLength(1) == 1)
         {
@@ -280,18 +281,26 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
 
         return 0;
 
-        int[][] RemoveСolumn(int pos, int[][] InputMatrix)
-        {
-            int[][] outputMatrix = new int[InputMatrix.GetLength(0) - 1][];
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
 
-                }
+    }
+    public int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ)
+    {
+        int[,] outputMas = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+
+        int iOld = 0, jOld = 0;
+
+        for (int i = 0; i < outputMas.GetLength(0); i++)
+        {
+            if (i == indexI) iOld = 1;
+            for (int j = 0; j < outputMas.GetLength(1); j++)
+            {
+                if (j == indexJ) jOld = 1;
+                outputMas[i, j] = matrix[i + iOld, j + jOld];
             }
-            return outputMatrix;
+            jOld = 0;
         }
+
+        return outputMas;
     }
 
 }

@@ -131,7 +131,7 @@ _Частотный анализ – это один из методов кри�
 */
 
 
-int[,] matrix1 = GenRandMatrix(5, 5);
+int[,] matrix1 = GenerationRandomMatrix(5, 5);
 
 PrintMatrix(matrix1);
 //Console.WriteLine(minSum(matrix1));
@@ -143,8 +143,8 @@ int[,] MatrixDelMin(int[,] matrix)
 {
 
     int min = matrix[0, 0];
-    int IndexMinI = 0;
-    int IndexMinJ = 0;
+    int IndexMinElementI = 0;
+    int IndexMinElementJ = 0;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -152,34 +152,40 @@ int[,] MatrixDelMin(int[,] matrix)
             if (min > matrix[i, j])
             {
                 min = matrix[i, j];
-                IndexMinI = i;
-                IndexMinJ = j;
+                IndexMinElementI = i;
+                IndexMinElementJ = j;
             }
         }
     }
-    Console.WriteLine("мин элемент: " + matrix[IndexMinI, IndexMinJ]);
+    Console.WriteLine("мин элемент: " + matrix[IndexMinElementI, IndexMinElementJ]);
 
-    int[,] matrixDelMin = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
-    int iM = 0, jM = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    return DeleteElementMatrix(matrix, IndexMinElementI, IndexMinElementJ);
+}
+
+int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ)
+{
+    int[,] outputMas = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+
+    int iOld = 0, jOld = 0;
+
+    for (int i = 0; i < outputMas.GetLength(0); i++)
     {
-        if (i != IndexMinI) iM = i;
+        if (i == indexI) iOld = 1;
+        for (int j = 0; j < outputMas.GetLength(1); j++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                if (j != IndexMinJ) jM = j;
-                matrixDelMin[iM, jM] = matrix[i, j];
-            }
+            if (j == indexJ) jOld = 1;
+            outputMas[i, j] = matrix[i + iOld, j + jOld];
         }
+        jOld = 0;
     }
-    return matrixDelMin;
+
+    return outputMas;
 }
 
 
-int[,] GenRandMatrix(int x, int y)
+int[,] GenerationRandomMatrix(int x, int y)
 {
     int[,] matrix1 = new int[x, y];
-    int im = 0, jm = 0;
     for (int i = 0; i < matrix1.GetLength(0); i++)
     {
         for (int j = 0; j < matrix1.GetLength(1); j++)

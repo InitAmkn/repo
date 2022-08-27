@@ -40,8 +40,12 @@ int[] ResizeArray(int[] masInput, int count)//изменение размера 
 int[] numbers;
 Console.WriteLine("Введите числа через запятую");
 Console.WriteLine("пример ввода: 0,7,8,-2,-2");
-numbers = InputMas(Console.ReadLine(), ',');
-Console.WriteLine($"кол-во отрицательных чисел: {NegativeNumbersCounter(numbers)}");
+string? inputString = Console.ReadLine();
+if (inputString != null)
+{
+    numbers = InputMas(inputString, ',');
+    Console.WriteLine($"кол-во отрицательных чисел: {NegativeNumbersCounter(numbers)}");
+}
 
 int NegativeNumbersCounter(int[] mas)
 {

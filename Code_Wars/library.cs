@@ -2,7 +2,7 @@
 
 class library
 {
-    public static int[] MoveZeroes(int[] arr) // перемещение нулей в конец массива
+    public int[] MoveZeroes(int[] arr) // перемещение нулей в конец массива
     {
         int[] arr1 = new int[arr.Length];
         int index = 0;
@@ -19,7 +19,7 @@ class library
         }
         return arr1;
     }
-    public static int[] ArrayDiff(int[] a, int[] b) //Вычитание элементов массива b из a
+    public int[] ArrayDiff(int[] a, int[] b) //Вычитание элементов массива b из a
     {
         /*Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
         It should remove all values from list a, which are present in list b keeping their order.*/
@@ -49,7 +49,7 @@ class library
         }
         return outPut;
     }
-    public static int[] InputMas(string matrix, char separator) //Считывание массива из строки
+    public int[] InputMas(string matrix, char separator) //Считывание массива из строки
     {
         string value = "";
         int[] mas = new int[matrix.Length];
@@ -71,8 +71,7 @@ class library
 
         return ResizeArray(mas, j);
     }
-
-    public static int[] ResizeArray(int[] masInput, int count)//изменение размера массива
+    public int[] ResizeArray(int[] masInput, int count)//изменение размера массива
     {
         int[] masOutput = new int[count];
         for (int i = 0; i < count; i++)
@@ -81,7 +80,7 @@ class library
         }
         return masOutput;
     }
-    public static void printMas(int[] masX)// Вывод массива в консоль
+    public void PrintMas(int[] masX)// Вывод массива в консоль
     {
         for (int i = 0; i < masX.Length; i++)
         {
@@ -89,7 +88,7 @@ class library
         }
 
     }
-    public static bool Narcissistic(int value) //Проверка на нарциссическое число
+    public bool Narcissistic(int value) //Проверка на нарциссическое число
     {
         bool isNarcissistic = false;
         int intChar = 0;
@@ -114,7 +113,7 @@ class library
 
         return isNarcissistic;
     }
-    public static int charCounter(int value) //метод подсчета кол-ва цифр в числе
+    public int charCounter(int value) //метод подсчета кол-ва цифр в числе
     {
         int countDecimal = 1;
         int countChar = 0;
@@ -128,7 +127,7 @@ class library
 
         return countChar - 1;
     }
-    public static string[] Solution(string str) //разбиение строки на массив 
+    public string[] Solution(string str) //разбиение строки на массив по 2 символа
     {
         /*
          * Complete the solution so that it splits the string into pairs of two characters. 
@@ -154,7 +153,7 @@ class library
         }
         return outPut;
     }
-    public static string GetReadableTime(int seconds) //пересчет секунд в часы
+    public string GetReadableTime(int seconds) //пересчет секунд в часы
     {
         /*Write a function, which takes a non-negative integer(seconds) as input and returns the time in a human-readable format(HH: MM:SS)
             HH = hours, padded to 2 digits, range: 00 - 99
@@ -182,8 +181,7 @@ class library
         string outPut = "" + sHH + ":" + sMM + ":" + sSS;
         return outPut;
     }
-
-    public static string Rot13(string input)
+    public string Rot13(string input)
     {
         /*
            How can you tell an extrovert from an introvert at NSA? 
@@ -235,35 +233,7 @@ class library
         }
 
     }
-
-
-    /*
-Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.
-How to take the determinant of a matrix -- it is simplest to start with the smallest cases:
-A 1x1 matrix |a| has determinant a.
-A 2x2 matrix [ [a, b], [c, d] ] or
-|a  b|
-|c  d|
-has determinant: a*d - b*c.
-The determinant of an n x n sized matrix is calculated by 
-reducing the problem to the calculation of the determinants of n matrices ofn-1 x n-1 size.
-For the 3x3 case, [ [a, b, c], [d, e, f], [g, h, i] ] or
-
-|a b c|  
-|d e f|  
-|g h i|  
-the determinant is: a * det(a_minor) - b * det(b_minor) + c * det(c_minor) where det(a_minor)
-refers to taking the determinant of the 2x2 matrix created by crossing out the row and column 
-in which the element a occurs:
-|- - -|
-|- e f|
-|- h i|  
-Note the alternation of signs.
-The determinant of larger matrices are calculated analogously, e.g. 
-if M is a 4x4 matrix with first row [a, b, c, d], then:
-det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_minor)
-*/
-    public static int Determinant(int[][] matrix)
+    public int Determinant(int[][] matrix) //вычисление детерминанта матрицы
     {
         int det = 0;
         if (matrix.GetLength(0) == 1 && matrix.GetLength(1) == 1)
@@ -283,7 +253,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
 
 
     }
-    public int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ)
+    public int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ) //Удаление элемента массива по индексу
     {
         int[,] outputMas = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
 
@@ -302,7 +272,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
 
         return outputMas;
     }
-    public int[,] GenerationRandomMatrix(int x, int y)
+    public int[,] GenerationRandomMatrix(int x, int y) //Генерация рандомного массива
     {
         int[,] matrix1 = new int[x, y];
         for (int i = 0; i < matrix1.GetLength(0); i++)
@@ -314,7 +284,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
         }
         return matrix1;
     }
-    public void PrintMatrix<T>(T[,] matrix)
+    public void PrintMatrix<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
     {
 
         for (int i = 0; i < matrix.GetLength(0); i++)
@@ -327,7 +297,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
         }
 
     }
-    public int[,] TurnMatrixClockwise(int[,] matrix)
+    public int[,] TurnMatrixClockwise(int[,] matrix) //Поворот матрицы по часовой
     {
         int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
 
@@ -341,7 +311,7 @@ det(M) = a * det(a_minor) - b * det(b_minor) + c * det(c_minor) - d * det(d_mino
         return outMatrix;
     }
 
-    public int[,] TurnMatrixAnticlockwise(int[,] matrix)
+    public int[,] TurnMatrixAnticlockwise(int[,] matrix) //Поворот матрицы против часовой
     {
         int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
 

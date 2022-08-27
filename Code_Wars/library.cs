@@ -310,7 +310,6 @@ class library
         }
         return outMatrix;
     }
-
     public int[,] TurnMatrixAnticlockwise(int[,] matrix) //Поворот матрицы против часовой
     {
         int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];

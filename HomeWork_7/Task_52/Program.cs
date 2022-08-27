@@ -18,7 +18,7 @@ int[,] GenerationRandomMatrix(int x, int y) //Генерация рандомн�
     }
     return matrix1;
 }
-void PrintMatrix2<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
+void PrintMatrix2D<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
 {
 
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -31,7 +31,7 @@ void PrintMatrix2<T>(T[,] matrix) //Вывод двумерного массив
     }
 }
 
-void PrintMatrix1<T>(T[] matrix) //Вывод одномерного массива (матрицы) в консоль
+void PrintMatrix1D<T>(T[] matrix) //Вывод одномерного массива (матрицы) в консоль
 {
     for (int i = 0; i < matrix.Length; i++)
     {
@@ -58,7 +58,7 @@ double[] ArithmeticMeanColumns(int[,] mas)
 
 
 int[,] arr = GenerationRandomMatrix(3, 10);
-PrintMatrix2(arr);
+PrintMatrix2D(arr);
 
 Console.WriteLine();
-PrintMatrix1(ArithmeticMeanColumns(arr));
+PrintMatrix1D(ArithmeticMeanColumns(arr));

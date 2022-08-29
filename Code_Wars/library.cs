@@ -2,7 +2,7 @@
 
 class library
 {
-    public int[] MoveZeroes(int[] arr) // перемещение нулей в конец массива
+    public static int[] MoveZeroes(int[] arr) // перемещение нулей в конец массива
     {
         int[] arr1 = new int[arr.Length];
         int index = 0;
@@ -19,7 +19,7 @@ class library
         }
         return arr1;
     }
-    public int[] ArrayDiff(int[] a, int[] b) //Вычитание элементов массива b из a
+    public static int[] ArrayDiff(int[] a, int[] b) //Вычитание элементов массива b из a
     {
         /*Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
         It should remove all values from list a, which are present in list b keeping their order.*/
@@ -49,7 +49,7 @@ class library
         }
         return outPut;
     }
-    public int[] InputMas(string matrix, char separator) //Считывание массива из строки
+    public static int[] InputMas(string matrix, char separator) //Считывание массива из строки
     {
         string value = "";
         int[] mas = new int[matrix.Length];
@@ -71,7 +71,7 @@ class library
 
         return ResizeArray(mas, j);
     }
-    public int[] ResizeArray(int[] masInput, int count)//изменение размера массива
+    public static int[] ResizeArray(int[] masInput, int count)//изменение размера массива
     {
         int[] masOutput = new int[count];
         for (int i = 0; i < count; i++)
@@ -80,15 +80,7 @@ class library
         }
         return masOutput;
     }
-    public void PrintMas(int[] masX)// Вывод массива в консоль
-    {
-        for (int i = 0; i < masX.Length; i++)
-        {
-            Console.Write($"{masX[i]} ");
-        }
-
-    }
-    public bool Narcissistic(int value) //Проверка на нарциссическое число
+    public static bool Narcissistic(int value) //Проверка на нарциссическое число
     {
         bool isNarcissistic = false;
         int intChar = 0;
@@ -113,7 +105,7 @@ class library
 
         return isNarcissistic;
     }
-    public int charCounter(int value) //метод подсчета кол-ва цифр в числе
+    public static int charCounter(int value) //метод подсчета кол-ва цифр в числе
     {
         int countDecimal = 1;
         int countChar = 0;
@@ -127,7 +119,7 @@ class library
 
         return countChar - 1;
     }
-    public string[] Solution(string str) //разбиение строки на массив по 2 символа
+    public static string[] Solution(string str) //разбиение строки на массив по 2 символа
     {
         /*
          * Complete the solution so that it splits the string into pairs of two characters. 
@@ -153,7 +145,7 @@ class library
         }
         return outPut;
     }
-    public string GetReadableTime(int seconds) //пересчет секунд в часы
+    public static string GetReadableTime(int seconds) //пересчет секунд в часы
     {
         /*Write a function, which takes a non-negative integer(seconds) as input and returns the time in a human-readable format(HH: MM:SS)
             HH = hours, padded to 2 digits, range: 00 - 99
@@ -181,7 +173,7 @@ class library
         string outPut = "" + sHH + ":" + sMM + ":" + sSS;
         return outPut;
     }
-    public string Rot13(string input)
+    public static string Rot13(string input)
     {
         /*
            How can you tell an extrovert from an introvert at NSA? 
@@ -233,27 +225,40 @@ class library
         }
 
     }
-    public int Determinant(int[][] matrix) //вычисление детерминанта матрицы
+    public static int FindDeterminant(int[,] matrix) //вычисление детерминанта матрицы
     {
         int det = 0;
-        if (matrix.GetLength(0) == 1 && matrix.GetLength(1) == 1)
+
+
+        if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
         {
-            det = matrix[0][0] * matrix[1][1] + matrix[0][1] * matrix[0][1];
+            det = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+        }
+        if (matrix.GetLength(0) > 2 && matrix.GetLength(1) > 2)
+        {
+            int sign = -1;
+            for (int i = 1; i <= matrix.GetLength(1); i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sign = -1;
+                }
+                if (i % 2 != 0)
+                {
+                    sign = 1;
+                }
+                det = det + matrix[0, i - 1] * FindDeterminant(DeleteElementMatrix(matrix, 0, i - 1)) * sign;
+                Console.Write(det + " ");
+            }
             return det;
         }
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        if (matrix.GetLength(0) == 1 && matrix.GetLength(1) == 1)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                //допишу как-нибудь
-            }
+            det = matrix[0, 0];
         }
-
-        return 0;
-
-
+        return det;
     }
-    public int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ) //Удаление элемента массива по индексу
+    public static int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ) //Удаление элемента массива по индексу
     {
         int[,] outputMas = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
 
@@ -269,10 +274,9 @@ class library
             }
             jOld = 0;
         }
-
         return outputMas;
     }
-    public int[,] GenerationRandomMatrix(int x, int y) //Генерация рандомного массива
+    public static int[,] GenerationRandomMatrix(int x, int y) //Генерация рандомного массива
     {
         int[,] matrix1 = new int[x, y];
         for (int i = 0; i < matrix1.GetLength(0); i++)
@@ -284,9 +288,8 @@ class library
         }
         return matrix1;
     }
-    public void PrintMatrix<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
+    public static void PrintMatrix<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
     {
-
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
@@ -295,9 +298,15 @@ class library
             }
             Console.WriteLine();
         }
-
     }
-    public int[,] TurnMatrixClockwise(int[,] matrix) //Поворот матрицы по часовой
+    public static void PrintMatrix<T>(T[] matrix) //Вывод двумерного массива (матрицы) в консоль
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            Console.Write($"{matrix[i]} ");
+        }
+    }
+    public static int[,] TurnMatrixClockwise(int[,] matrix) //Поворот матрицы по часовой
     {
         int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
 
@@ -310,7 +319,7 @@ class library
         }
         return outMatrix;
     }
-    public int[,] TurnMatrixAnticlockwise(int[,] matrix) //Поворот матрицы против часовой
+    public static int[,] TurnMatrixAnticlockwise(int[,] matrix) //Поворот матрицы против часовой
     {
         int[,] outMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
 

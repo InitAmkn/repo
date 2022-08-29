@@ -9,9 +9,11 @@ class Program
 
     static void Main(string[] args)
     {
+        int[,] arr = library.GenerationRandomMatrix(10, 10);
 
-        //Console.WriteLine(library.Rot13("This is my first ROT13 excercise!"));
-        //Console.WriteLine(library.Rot13("AaSs"));
+        library.PrintMatrix(arr);
 
+
+        Console.WriteLine(library.FindDeterminant(arr));
     }
 }

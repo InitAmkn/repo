@@ -228,8 +228,6 @@ class library
     public static int FindDeterminant(int[,] matrix) //вычисление детерминанта матрицы
     {
         int det = 0;
-
-
         if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
         {
             det = matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
@@ -248,7 +246,6 @@ class library
                     sign = 1;
                 }
                 det = det + matrix[0, i - 1] * FindDeterminant(DeleteElementMatrix(matrix, 0, i - 1)) * sign;
-                Console.Write(det + " ");
             }
             return det;
         }
@@ -257,6 +254,57 @@ class library
             det = matrix[0, 0];
         }
         return det;
+    }
+    public static int FindDeterminant(int[][] matrix) //вычисление детерминанта матрицы
+    {
+        int det = 0;
+        if (matrix.Length == 2)
+        {
+            det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+        }
+        if (matrix.Length > 2)
+        {
+            int sign = -1;
+            for (int i = 1; i <= matrix.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sign = -1;
+                }
+                if (i % 2 != 0)
+                {
+                    sign = 1;
+                }
+                det = det + matrix[0][i - 1] * FindDeterminant(DeleteElementMatrix(matrix, 0, i - 1)) * sign;
+            }
+            return det;
+        }
+        if (matrix.Length == 1)
+        {
+            det = matrix[0][0];
+        }
+        return det;
+    }
+    public static int[][] DeleteElementMatrix(int[][] matrix, int indexI, int indexJ) //Удаление элемента массива по индексу
+    {
+        int[][] outputMas = new int[matrix.Length - 1][];
+        for (int i = 0; i < outputMas.Length; i++)
+        {
+            outputMas[i] = new int[matrix[i].Length - 1];
+        }
+        int iOld = 0, jOld = 0;
+
+        for (int i = 0; i < outputMas.Length; i++)
+        {
+            if (i == indexI) iOld = 1;
+            for (int j = 0; j < outputMas[i].Length; j++)
+            {
+                if (j == indexJ) jOld = 1;
+                outputMas[i][j] = matrix[i + iOld][j + jOld];
+            }
+            jOld = 0;
+        }
+        return outputMas;
     }
     public static int[,] DeleteElementMatrix(int[,] matrix, int indexI, int indexJ) //Удаление элемента массива по индексу
     {
@@ -275,6 +323,35 @@ class library
             jOld = 0;
         }
         return outputMas;
+    }
+    public static int[][] GenerationRandomMatrix1(int x, int y) //Генерация рандомного массива
+    {
+        int[][] matrix = new int[x][];
+        for (int i = 0; i < y; i++)
+        {
+            matrix[i] = new int[y];
+        }
+
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            for (int j = 0; j < matrix[i].Length; j++)
+            {
+                matrix[i][j] = new Random().Next(0, 10);
+            }
+        }
+        return matrix;
+    }
+    public static void PrintMatrix<T>(T[][] matrix) //Вывод двумерного массива (матрицы) в консоль
+    {
+
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            for (int j = 0; j < matrix[i].Length; j++)
+            {
+                Console.Write($"{matrix[i][j]} ");
+            }
+            Console.WriteLine();
+        }
     }
     public static int[,] GenerationRandomMatrix(int x, int y) //Генерация рандомного массива
     {

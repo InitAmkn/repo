@@ -1,6 +1,7 @@
 ﻿/*
 Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
-m = 2, n = 3 -> A(m,n) = 29
+m = 2, n = 3 -> A(m,n) = 29 //должно быть 9, 
+//m = 3, n = 2 -> A(m,n) = 29!
 */
 
 
@@ -12,4 +13,4 @@ long AckermanFunction(long m, long n, long A = 0)
     return A;
 }
 
-Console.WriteLine(AckermanFunction(3, 10));
+Console.WriteLine(AckermanFunction(3, 2));

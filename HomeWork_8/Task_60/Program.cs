@@ -44,7 +44,7 @@ int[,] MultiplicationMatrix(int[,] matrix1, int[,] matrix2)
         {
             int tempMult = 0;
 
-            for (int k = 0; k < matrix2.GetLength(1); k++)
+            for (int k = 0; k < matrix1.GetLength(1); k++)
             {
                 tempMult = tempMult + matrix1[i, k] * matrix2[k, j];
             }
@@ -59,8 +59,8 @@ int[,] MultiplicationMatrix(int[,] matrix1, int[,] matrix2)
 
 
 
-int[,] matrix1 = GenerationRandomMatrix(2, 3);
-int[,] matrix2 = GenerationRandomMatrix(3, 3);
+int[,] matrix1 = GenerationRandomMatrix(2, 2);
+int[,] matrix2 = GenerationRandomMatrix(2, 3);
 
 PrintMatrix2D(matrix1);
 

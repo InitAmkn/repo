@@ -20,7 +20,7 @@
 */
 
 
-int minSum(int[,] matrix)
+int StringWithMinSumElements(int[,] matrix)
 {
 
     int[] sum = new int[matrix.GetLength(0)];
@@ -43,7 +43,6 @@ int minSum(int[,] matrix)
             indexMinSum = i;
         }
     }
-
     return indexMinSum;
 }
 

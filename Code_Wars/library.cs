@@ -202,7 +202,6 @@ class library
         }
         return outPut1;
 
-
         char FindCheck(string abc, char s)
         {
             char output = s;
@@ -213,7 +212,6 @@ class library
                     if ((j + 13) <= abc.Length - 1)
                     {
                         output = abc[j + 13];
-
                     }
                     if ((j + 13) > abc.Length - 1)
                     {
@@ -341,7 +339,7 @@ class library
         }
         return matrix;
     }
-    public static void PrintMatrix<T>(T[][] matrix) //Вывод двумерного массива (матрицы) в консоль
+    public static void PrintMatrix2D<T>(T[][] matrix) //Вывод двумерного массива (матрицы) в консоль
     {
 
         for (int i = 0; i < matrix.Length; i++)
@@ -365,7 +363,7 @@ class library
         }
         return matrix1;
     }
-    public static void PrintMatrix<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
+    public static void PrintMatrix2D<T>(T[,] matrix) //Вывод двумерного массива (матрицы) в консоль
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
@@ -376,7 +374,7 @@ class library
             Console.WriteLine();
         }
     }
-    public static void PrintMatrix<T>(T[] matrix) //Вывод двумерного массива (матрицы) в консоль
+    public static void PrintMatrix1D<T>(T[] matrix) //Вывод двумерного массива (матрицы) в консоль
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
@@ -409,6 +407,73 @@ class library
         }
         return outMatrix;
     }
+    public static List<string> Top3(string s) //Most frequently used words in a text
+    {
+        const string alphabet = " ,_/.&?;:><[]{}()";
+        string word = "";
 
+
+        List<string> masString = new List<string>();
+        for (int i = 0; i < s.Length; i++)
+        {
+            bool canAdd = true;
+            for (int j = 0; j < alphabet.Length; j++)
+            {
+                if (s[i] == alphabet[j])
+                {
+                    canAdd = false;
+                }
+            }
+            if (canAdd)
+            {
+                word = word + s[i];
+            }
+            if (!canAdd || i == s.Length - 1)
+            {
+                if (word != "")
+                {
+                    masString.Add(word);
+                    word = "";
+                }
+            }
+
+        }
+        masString.Sort();
+        string countWord = masString[0];
+        int count = -1;
+        int tempCount = 0;
+
+        List<string> masStringTop3 = new List<string>();
+        int[] indexTop = new int[masString.Count];
+
+        for (int i = 0; i < masString.Count; i++)
+        {
+            if (countWord == masString[i])
+            {
+                count++;
+            }
+
+            if (countWord != masString[i] || i == masString.Count - 1)
+            {
+                countWord = masString[i];
+                tempCount = count;
+                masStringTop3.Add("" + tempCount);
+                if (i != masString.Count - 1) count = 0;
+            }
+            indexTop[i] = count;
+        }
+        for (int i = 0; i < indexTop.Length; i++)
+        {
+            Console.Write(indexTop[i] + " ");
+        }
+        Console.WriteLine();
+
+        for (int i = 0; i < masString.Count; i++)
+        {
+            Console.Write(masString[i] + " ");
+        }
+        Console.WriteLine();
+        return masStringTop3;
+    }
 }
 

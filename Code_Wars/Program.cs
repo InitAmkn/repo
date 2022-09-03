@@ -9,11 +9,14 @@ class Program
 
     static void Main(string[] args)
     {
-        //int[,] arr = library.GenerationRandomMatrix(10, 10);
-        //library.PrintMatrix(arr);
-        // Console.WriteLine(library.FindDeterminant(arr));
-        int[][] arr1 = library.GenerationRandomMatrix1(10, 10);
-        library.PrintMatrix(arr1);
-        Console.WriteLine(library.FindDeterminant(arr1));
+        string s = "Sasha  Sa sha sha qwe qwe iop[ 'ghjk rtyu []sd []sd iop[ []sd rtyu rtyu 'ghjk m b";
+        List<string> masString = new List<string>();
+        masString = library.Top3(s);
+
+        for (int i = 0; i < masString.Count; i++)
+        {
+            Console.Write(masString[i] + " ");
+        }
+
     }
 }

@@ -411,8 +411,6 @@ class library
     {
         const string alphabet = " ,_/.&?;:><[]{}()";
         string word = "";
-
-
         List<string> masString = new List<string>();
         for (int i = 0; i < s.Length; i++)
         {
@@ -445,6 +443,7 @@ class library
 
         List<string> masStringTop3 = new List<string>();
         int[] indexTop = new int[masString.Count];
+        //int[][] result = new int[][];
 
         for (int i = 0; i < masString.Count; i++)
         {
@@ -457,22 +456,13 @@ class library
             {
                 countWord = masString[i];
                 tempCount = count;
-                masStringTop3.Add("" + tempCount);
+
                 if (i != masString.Count - 1) count = 0;
             }
             indexTop[i] = count;
         }
-        for (int i = 0; i < indexTop.Length; i++)
-        {
-            Console.Write(indexTop[i] + " ");
-        }
-        Console.WriteLine();
 
-        for (int i = 0; i < masString.Count; i++)
-        {
-            Console.Write(masString[i] + " ");
-        }
-        Console.WriteLine();
+
         return masStringTop3;
     }
 }
